@@ -1,13 +1,12 @@
 const express = require('express');
+const globalService = require('./global_services');
 // import { find, findById, findOne, create, findByIdAndUpdate, findByIdAndRemove } from '../../models/user';
 
 const getEcho = (req, res, next) => {
     try {
 
-        const today = new Date();
-
         return res.status(200).json({
-            'date': today,
+            'date': globalService.getDateAmericaFormat(),
             'message': 'The system is running',
             'data': ""
         });

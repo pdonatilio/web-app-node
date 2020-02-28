@@ -1,5 +1,6 @@
 
 const express = require('express');
+const globalService = require('../services/global_services');
 
 module.exports = function () {
     let server = express(),
@@ -28,7 +29,8 @@ module.exports = function () {
         let hostname = server.get('hostname'),
             port = server.get('port');
         server.listen(port, function () {
-            console.log('Express server listening on - http://' + hostname + ':' + port);
+            let today = new Date();
+            console.log('[INFO] - ' + globalService.getDateAmericaFormat() + ' Express server listening on - http://' + hostname + ':' + port);
         });
     };
     return {
