@@ -12,11 +12,13 @@ With this project running correctly, we can create our models and new endpoints.
 ├── configs
 │   ├── app.js
 │   ├── config.js
+│   ├── db.js
+│   └── local.js
 ├── controllers
 │   └── apis
-│       └── user.js
+│       └── echo.js
 ├── models
-│   └── user.js
+│
 ├── package.json
 ├── package-lock.json
 ├── routes
@@ -26,6 +28,6 @@ With this project running correctly, we can create our models and new endpoints.
 │   └── index.js
 ├── server.js
 └── services
-    └── users
-        └── user.js
+    ├── echo.js
+    └── global_services.js
 ```
