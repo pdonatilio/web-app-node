@@ -1,0 +1,27 @@
+{
+  "name": "web-api",
+  "version": "1.0.0",
+  "description": "Web Api NodeJs + Express with Code First",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "Code",
+    "First"
+  ],
+  "author": "Paulo Donatilio",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
