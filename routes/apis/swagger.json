@@ -1,0 +1,32 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Web API with Node JS and Express",
+    "description": "Web Api skeleton to create a project with NodeJS and Express",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "basePath": "/api/v1",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/echo": {
+      "get": {
+        "tags": [
+          "Echo"
+        ],
+        "summary": "Get all users in system",
+        "responses": {
+          "200": {
+            "description": "OK"           
+          }
+        }
+      }
+    }
+  }
+}
