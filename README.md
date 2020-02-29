@@ -8,26 +8,31 @@ Basically this project is able to make a test with basic endpoint and be able to
 With this project running correctly, we can create our models and new endpoints.
 
 ### The project folder structure
+
 ```
-├── configs
-│   ├── app.js
-│   ├── config.js
-│   ├── db.js
-│   └── local.js
-├── controllers
-│   └── apis
-│       └── echo.js
-├── models
-│
-├── package.json
-├── package-lock.json
-├── routes
-│   ├── apis
-│   │   ├── index.js
-│   │   └── v1.js
-│   └── index.js
+├── services
+│   ├── global_services.js
+│   └── echo.js
 ├── server.js
-└── services
-    ├── echo.js
-    └── global_services.js
+├── routes
+│   ├── index.js
+│   └── apis
+│       ├── v1.js
+│       └── index.js
+├── README.md
+├── package-lock.json
+├── package.json
+├── models
+├── controllers
+│   └── apis
+│       └── echo.js
+└── configs
+    ├── local.js
+    ├── db.js
+    ├── config.js
+    └── app.js
 ```
+
+### To run the project
+
+`npm install` && `npm start`
