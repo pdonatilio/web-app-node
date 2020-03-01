@@ -3,23 +3,23 @@ const globalService = require('./global_services');
 
 const getEcho = () => {
 
-    const data = {
+    const result = {
         'ok': true,
         'message': 'The system is running',
         'data': ""
     };
-    return data;
+    return result;
 }
 
-const postEcho = (name) => {
+const postEcho = (message, data) => {
     
-    const data = {
+    const result = {
         'ok': true,
-        'message': `The system is running ${name}`,
-        'data': `*${name}*`
+        'message': `The system is running ${message}`,
+        'data': data
     };
     
-    return data;
+    return result;
 }
 
 module.exports = {

@@ -1,6 +1,7 @@
 
 const express = require('express');
 const globalService = require('../services/global_services');
+const bodyParser = require('body-parser');
 
 module.exports = function () {
     let server = express(),
@@ -15,10 +16,10 @@ module.exports = function () {
         server.set('hostname', config.hostname);
         
         // add middleware to parse the json
-        // server.use(bodyParser.json());
-        // server.use(bodyParser.urlencoded({
-        //     extended: false
-        // }));
+        server.use(bodyParser.json());
+        server.use(bodyParser.urlencoded({
+            extended: false
+        }));
 
         // Set up routes
         routes.init(server);

@@ -96,7 +96,7 @@ router.post('/', (req, res, next) => {
       });
     }
 
-    const result = echoService.postEcho(body["name"]);
+    const result = echoService.postEcho(body.message, body.data);
   
     const data = {
       'date': globalService.getDateAmericaFormat(),
