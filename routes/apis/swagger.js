@@ -11,7 +11,7 @@ const options = {
       version: '1.0.0',
     },
     basePath: '/api/v1'
-  },
+  } 
 };
 
 const specs = swaggerJsdoc(options);

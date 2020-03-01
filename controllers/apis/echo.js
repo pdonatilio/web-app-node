@@ -1,6 +1,7 @@
 const express = require('express');
 const echoService = require('../../services/echo');
 const globalService = require('../../services/global_services');
+const auth = require('../../middlewares/auth');
 
 let router = express.Router();
 
@@ -75,7 +76,7 @@ router.get('/', (req, res, next) => {
 *       500:
 *         description: Something went wrong, Please try again
 */
-router.post('/', (req, res, next) => {
+router.post('/', auth, (req, res, next) => {
   
   const passport = true;
 
