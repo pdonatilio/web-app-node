@@ -12,35 +12,37 @@ let router = express.Router();
 *     summary: Echo Test.
 *     description: Echo Test - Get function without passport security.
 *     responses: 
+*       401:
+*         description: You are not allowed
 *       200:
 *         description: The system is running
-*       400:
-*         description: The system is running, but you not allowed to get this info'
 *       500:
 *         description: Something went wrong, Please try again
 */
 router.get('/', (req, res, next) => {
+  const passport = true;
+
+  if (passport == false) {
+    return res.status(401).json({
+      'date': globalService.getDateAmericaFormat(),
+      'message': `You are not allowed`
+    });
+  }
+
   try {
-
-    const passport = true;
-
     const result = echoService.getEcho();
 
     const data = {
       'date': globalService.getDateAmericaFormat(),
       result
     };
+    return res.status(200).json(data);
 
-    if(passport == true){
-      return res.status(200).json(data);
-    } else {
-      return res.status(400).json(data);
-    }
   } catch (error) {
-      return res.status(500).json({
-          'code': 'SERVER_ERROR',
-          'description': 'Something went wrong, Please try again'
-      });
+    return res.status(500).json({
+      'code': 'SERVER_ERROR',
+      'description': 'Something went wrong, Please try again'
+    });
   }
 })
 
@@ -49,23 +51,70 @@ router.get('/', (req, res, next) => {
 * @swagger
 * /echo:
 *   post:
-*     summary: Echo Test - NOT IMPLEMENTED.
+*     summary: Echo Test.
 *     description: Echo Test - Get function with passport security (in near future).
+*     consumes:
+*       - application/json
 *     parameters:
-*       - name: body
+*       - name: test
 *         in: body
 *         schema: 
 *           type: object
 *           properties:
-*             name:
+*             message:
+*               type: string
+*             data:
 *               type: string
 *     responses: 
+*       401:
+*         description: You are not allowed
+*       400:
+*         description: The parameters are incorrect
 *       200:
-*         description: The system is running {name}
+*         description: The system is running, {message}
 *       500:
-*         description: Something went wrong {name}, Please try again
+*         description: Something went wrong, Please try again
 */
-//router.post('/', echoService.getEcho);
+router.post('/', (req, res, next) => {
+  
+  const passport = true;
 
+  if (passport == false) {
+    return res.status(401).json({
+      'date': globalService.getDateAmericaFormat(),
+      'message': `You are not allowed`
+    });
+  }
+
+  try {
+    const body = req.body;
+
+    if(body == null){
+      return res.status(400).json({
+        'date': globalService.getDateAmericaFormat(),
+        'message': `The parameters are incorrect`
+      });
+    }
+
+    const result = echoService.postEcho(body["name"]);
+  
+    const data = {
+      'date': globalService.getDateAmericaFormat(),
+      result
+    };
+
+    return res.status(200).json(data);
+
+  } catch (error) {
+    
+    return res.status(500).json({
+      'code': 'SERVER_ERROR',
+      'description': 'Something went wrong, Please try again'
+    });
+    
+  }
+
+
+})
 
 module.exports = router;
