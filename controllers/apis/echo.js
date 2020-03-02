@@ -23,14 +23,6 @@ let router = express.Router();
 *         description: Something went wrong, Please try again
 */
 router.get('/', (req, res, next) => {
-  const passport = true;
-
-  if (passport == false) {
-    return res.status(401).json({
-      'date': globalService.getDateAmericaFormat(),
-      'message': `You are not allowed`
-    });
-  }
 
   try {
     const result = echoService.getEcho();
@@ -83,15 +75,6 @@ router.get('/', (req, res, next) => {
 *         description: Something went wrong, Please try again
 */
 router.post('/', auth, (req, res, next) => {
-  
-  const passport = true;
-
-  if (passport == false) {
-    return res.status(401).json({
-      'date': globalService.getDateAmericaFormat(),
-      'message': `You are not allowed`
-    });
-  }
 
   try {
     const body = req.body;

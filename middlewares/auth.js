@@ -6,7 +6,7 @@ const auth = (req, res, next) => {
   const token = req.headers.authorization;
 
   if(!token){
-    return res.status(400).json({
+    return res.status(401).json({
       'date': globalService.getDateAmericaFormat(),
       'message': `Token not send`
     });
