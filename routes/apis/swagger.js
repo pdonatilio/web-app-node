@@ -10,8 +10,18 @@ const options = {
       title: 'WEB API - Tests',
       version: '1.0.0',
     },
-    basePath: '/api/v1'
-  } 
+    basePath: '/api/v1',
+    securityDefinitions: {
+       Bearer: {
+        type: 'apiKey',
+        name: 'Authorization',
+        in: 'header'
+       }
+        
+       
+    }
+  },
+  
 };
 
 const specs = swaggerJsdoc(options);

@@ -9,6 +9,8 @@ let router = express.Router();
 * @swagger
 * /auth:
 *   post:
+*     tags: 
+*       - Authentication
 *     summary: Login Application with JWT.
 *     description: Login with JWT.
 *     consumes:

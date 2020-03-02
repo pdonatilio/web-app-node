@@ -10,6 +10,8 @@ let router = express.Router();
 * @swagger
 * /echo:
 *   get:
+*     tags:
+*       - Echo Test
 *     summary: Echo Test.
 *     description: Echo Test - Get function without passport security.
 *     responses: 
@@ -52,8 +54,12 @@ router.get('/', (req, res, next) => {
 * @swagger
 * /echo:
 *   post:
+*     tags:
+*       - Echo Test
 *     summary: Echo Test.
 *     description: Echo Test - Get function with passport security (in near future).
+*     security:
+*       - Bearer: []
 *     consumes:
 *       - application/json
 *     parameters:
