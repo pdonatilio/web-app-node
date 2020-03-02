@@ -1,6 +1,6 @@
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
-const swaggerSpecs = require('./swagger');
+const swaggerSpecs = require('../../configs/swagger');
 
 const v1ApiController = require('./v1');
 //import * as specs from './swagger';
