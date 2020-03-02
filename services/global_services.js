@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const env = require('../configs/env');
 
 const getDateAmericaFormat = (complement = "time") => {
   try {
@@ -48,7 +49,7 @@ const getDateBrazilianFormat = (complement = "time") => {
 }
 
 const generateToken = (id) => {
-  return jwt.sign({ id: id }, 'jwt_secret_word', { expiresIn: '1d' })  ;
+  return jwt.sign({ id: id }, env.jwt_secret_word, { expiresIn: '1d' })  ;
 }
 
 module.exports = {

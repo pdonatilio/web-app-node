@@ -1,5 +1,6 @@
-const globalService = require('../services/global_services');
 const jwt = require('jsonwebtoken');
+const globalService = require('../services/global_services');
+const env = require('../configs/env');
 
 const auth = (req, res, next) => {
 
@@ -12,7 +13,7 @@ const auth = (req, res, next) => {
     });
   }
 
-  jwt.verify(token, 'jwt_secret_word', (err, decoded) => {
+  jwt.verify(token, env.jwt_secret_word, (err, decoded) => {
     if (err) {
       return res.status(401).json({
         'date': globalService.getDateAmericaFormat(),

@@ -8,13 +8,13 @@ module.exports = function () {
         create,
         start;
 
-    create = (config) => {
+    create = (env) => {
         let routes = require('../routes');
         // set all the server things
-        server.set('env', config.env);
-        server.set('port', config.port);
-        server.set('hostname', config.hostname);
-        
+        server.set('env', env.env);
+        server.set('port', env.port);
+        server.set('hostname', env.hostname);
+
         // add middleware to parse the json
         server.use(bodyParser.json());
         server.use(bodyParser.urlencoded({
