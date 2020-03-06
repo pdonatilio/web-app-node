@@ -40,7 +40,7 @@ With this project running correctly, we can create our models and new endpoints.
 
 ### To run the project
 
-if you not have the nodejs in your system: https://nodejs.org/en/
+if you don't have the nodejs in your system: https://nodejs.org/en/
 
 
 
