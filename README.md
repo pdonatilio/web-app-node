@@ -10,9 +10,11 @@ With this project running correctly, we can create our models and new endpoints.
 ### The project folder structure
 
 ```
+.
 ├── services
 │   ├── global_services.js
-│   └── echo.js
+│   ├── echo.js
+│   └── auth.js
 ├── server.js
 ├── routes
 │   ├── index.js
@@ -23,16 +25,37 @@ With this project running correctly, we can create our models and new endpoints.
 ├── package-lock.json
 ├── package.json
 ├── models
+├── middlewares
+│   └── auth.js
 ├── controllers
 │   └── apis
-│       └── echo.js
+│       ├── echo.js
+│       └── auth.js
 └── configs
-    ├── local.js
+    ├── swagger.js
+    ├── env.js
     ├── db.js
-    ├── config.js
     └── app.js
 ```
 
 ### To run the project
 
+if you not have the nodejs in your system: https://nodejs.org/en/
+
+
+
+Get the repository and inside the folder:
+
+1 - Create an ENV File (_.env_) with these parameters:
+```
+NODE_ENV = development
+PORT = 3000
+hostname='localhost'
+
+#JWT
+jwt_secret_word = 'jwt_secret_word'
+jwt_expires = '1d'
+```
+
+2 - run these command below:
 `npm install` && `npm start`
